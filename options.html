@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Olorin Printer Settings</title>
+</head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/options.css">
+<body>
+  <div class="container position-absolute top-50 start-50 translate-middle">
+  <div class="top-head">
+    <h1>Printer Settings</h1>
+    <button  class="btn btn-primary" id="refresh">Refresh Printers</button>
+  </div>
+  <form id="printer" method="post">
+    <div class="form-group">
+      <div class="input-row">
+        <div class="d-flex full-width justify-between">
+          <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="receipt_printer" value="Receipt Printer" disabled />   
+          <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page Width (Inchs)" name="receipt_printer_width" id="receipt_printer_width"/>
+          <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page height (Inchs)" name="receipt_printer_height" id="receipt_printer_height"/>
+          <select class="form-control" name="receipt_printer_option" id="receipt_printer_option">
+            <option>Select</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  <div class="form-group">
+    <div class="input-row">
+      <div class="d-flex full-width justify-between">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="sticker_printer" value="Sticker Printer" disabled/>
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page Width (Inchs)" name="sticker_printer_width" id="sticker_printer_width"/>
+          <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page height (Inchs)" name="sticker_printer_height" id="sticker_printer_height"/>
+        <select class="form-control" name="sticker_printer_option" id="sticker_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-row">
+      <div class="d-flex full-width justify-between">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="paper_printer" value="Paper Printer" disabled/>
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page Width (Inchs)" name="paper_printer_width" id="paper_printer_width"/>  
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page height (Inchs)" name="paper_printer_height" id="paper_printer_height"/>
+      <select class="form-control" name="paper_printer_option" id="paper_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-row">
+      <div class="d-flex full-width justify-between">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="full_sheet_printer" value="Full Sheet Printer" disabled/>
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page Width (Inchs)" name="full_sheet_printer_width" id="full_sheet_printer_width"/>  
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page height (Inchs)" name="full_sheet_printer_height" id="full_sheet_printer_height"/>
+        <select class="form-control" name="full_sheet_printer_option" id="full_sheet_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-row">
+      <div class="d-flex full-width justify-between">
+      <input id="wrapped" class="form-control" type="text" placeholder="Printer Label" name="label_printer" value="Label Printer" disabled/>
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page Width (Inchs)" name="label_printer_width" id="label_printer_width"/>  
+      <input id="wrapped" class="form-control page-size no-radius" type="number" step="0.01"  placeholder="Page height (Inchs)" name="label_printer_height" id="label_printer_height"/>
+        <select class="form-control" name="label_printer_option" id="label_printer_option">
+          <option>Select</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group justify-content-end save-btn-wrap">
+    <span id ="save-msg">Printer Mapping Saved Successfully</span>
+    <button type="submit" class="btn btn-primary" id="saveData">save</button>
+  </div>
+  </form>
+</div>
+  <script src="js/jquery.min.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
