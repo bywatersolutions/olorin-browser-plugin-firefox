@@ -11,7 +11,15 @@
 		console.log(printDiv)
 
 		// fetch printer name , page width and height corresponding to that printer
-	    chrome.storage.local.get([printer,printer+"_width",printer+"_height"]).then(value => {
+	    chrome.storage.local.get([printer,
+			printer+"_width",
+			printer+"_height",
+			printer+"_margin_top",
+			printer+"_margin_right",
+			printer+"_margin_left",
+			printer+"_margin_bottom",
+			printer+"_orientation"]).then(value => {
+				console.log(value)
 		  var pageWidthVariable = printer+"_width";
 		  var pageHeightVariable = printer+"_height";
 		  var pageWidth = 0;
@@ -22,6 +30,36 @@
 		  if(value && value[pageHeightVariable]){
 			pageHeight = value[pageHeightVariable]
 		  }
+		  var marginTopVar = printer+"_margin_top";
+		  var marginRightVar = printer+"_margin_right";
+		  var marginLeftVar = printer+"_margin_left";
+		  var marginBottomVar = printer+"_margin_bottom";
+		  var orientationVVar = printer+"_orientation";
+
+		  var marginTop = 0;
+		  var marginRight = 0;
+		  var marginLeft = 0;
+		  var marginBottom = 0;
+		  var orientation = '';
+
+		  if(value && value[marginTopVar]){
+			marginTop = value[marginTopVar]
+		  }
+		  if(value && value[marginRightVar]){
+			marginRight = value[marginRightVar]
+		  }
+
+		  if(value && value[marginLeftVar]){
+			marginLeft = value[marginLeftVar]
+		  }
+		  if(value && value[marginBottomVar]){
+			marginBottom = value[marginBottomVar]
+		  }
+		  if(value && value[orientationVVar]){
+			orientation = value[orientationVVar]
+		  }
+		  console.log(marginTop,marginRight,marginLeft,marginBottom,orientation)
+
 		  if(value && value[printer]){
 		  	var printerName = value[printer]
 		  	var printContent = $(printDiv).html()
@@ -34,7 +72,12 @@
 					    content:printContent,
 					    printer:printerName,
 						pageWidth:pageWidth,
-						pageHeight:pageHeight
+						pageHeight:pageHeight,
+						marginTop : marginTop,
+		  				marginRight : marginRight,
+		  				marginLeft : marginLeft,
+		  				marginBottom : marginBottom,
+		  				orientation : orientation,
 					  };
 					    ws.send(JSON.stringify(message));
 				  };
